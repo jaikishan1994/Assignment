@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Demo | Create</title>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </head>
+
+    <body onload="buildDynamicRegionsDropDown()">
+        <div>
+            <table style="width:80%">
+                <tr>
+                    <th style="width:40%">
+                        <a href="index.html">Create a new A/B case </a>
+                    </th>
+                    <th style="width:40%">
+                        <a href="savedCases.html">Saved A/B cases</a>
+                    </th>                    
+                </tr>
+            </table>
+        </div>
+        <form style="margin-left:15%" onsubmit="saveDetails(event)">
+            <table style="width: 60%">
+                <tr>
+                    <td colspan="2"><label>Create a new A/B case</label></td>
+                </tr>
+                <tr>
+                    <td style="width: 40%" ><input type="text" id="name" placeholder="name of this A/B case" required></td>
+                    <td>
+                        <div>
+                            <select id="regions-dropdown" required>
+                                <option value="" selected disabled hidden>Choose the region to apply</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 60%">
+                        <label>Status</label>
+                    </td>
+                    <td style="width: 40%">
+                        <label>Choose the type: </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 60%">
+                        <input type="radio" name="status" id="status" value="Active" required>
+                        <label for="active">Active</label>
+                        <input type="radio" name="status" value="Inactive">
+                        <label for="inactive">Inactive</label>
+                    </td>
+                    <td style="width: 40%">
+                        <input type="checkbox" name="type" id="image" value="Image">
+                        <label for="image">Image</label>
+                        <input type="checkbox" name="type" id="video" value="Video">
+                        <label for="video">Video</label><br>
+                        <input type="checkbox" name="type" id="element" value="Element">
+                        <label for="element">Element</label>
+                    </td>
+                </tr>
+                <tr style="width: 40%">
+                    <td colspan="2">
+                        <input type="submit" value="Save">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <script type = "text/javascript" src = "script.js" defer></script>
+    </body>
+
+</html>
